@@ -1,0 +1,935 @@
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+
+/* ================= RESET ================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+
+    background: #f4cfe0;
+
+    color: #101323;
+
+    font-family: 'Space Grotesk', sans-serif;
+
+    font-size: 12px;
+
+    padding: 10px;
+
+}
+
+
+/* ================= DESKTOP ================= */
+
+.desktop {
+
+    width: 100%;
+
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    border: 1px solid #111;
+
+    background: #f4cfe0;
+
+}
+
+
+/* ================= BARRA SUPERIOR ================= */
+
+.desktop-top {
+
+    height: 27px;
+
+    background: #e52b86;
+
+    border-bottom: 1px solid #111;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 8px;
+
+    font-family: 'DM Mono', monospace;
+
+    font-size: 10px;
+
+}
+
+
+.window-controls {
+
+    display: flex;
+
+    gap: 10px;
+
+    font-size: 12px;
+
+}
+
+
+/* ================= WORKSPACE ================= */
+
+.workspace {
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.35fr)
+        minmax(0, 1fr);
+
+    grid-template-areas:
+
+        "intro intro"
+
+        "left right"
+
+        "certifications certifications"
+
+        "contact contact";
+
+    gap: 12px;
+
+    padding: 10px;
+
+    align-items: start;
+
+}
+
+
+/* ================= JANELAS ================= */
+
+.window {
+
+    background: #fffaf0;
+
+    border: 1px solid #101323;
+
+    min-width: 0;
+
+    overflow: hidden;
+
+}
+
+
+.window-bar {
+
+    height: 23px;
+
+    background: #e52b86;
+
+    border-bottom: 1px solid #101323;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 0 7px;
+
+    font-family: 'DM Mono', monospace;
+
+    font-size: 10px;
+
+}
+
+
+.window-bar b {
+
+    margin-left: auto;
+
+    font-size: 13px;
+
+}
+
+
+.dots {
+
+    display: flex;
+
+    gap: 4px;
+
+}
+
+
+.dots i {
+
+    width: 9px;
+
+    height: 9px;
+
+    border-radius: 50%;
+
+    border: 1px solid #101323;
+
+    background: #ffe95c;
+
+}
+
+
+.dots i:nth-child(2) {
+
+    background: #65d9e7;
+
+}
+
+
+.dots i:nth-child(3) {
+
+    background: #a6d9ff;
+
+}
+
+
+/* ================= ÁREAS DO GRID ================= */
+
+.intro-window {
+
+    grid-area: intro;
+
+}
+
+
+.left-column {
+
+    grid-area: left;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+
+    min-width: 0;
+
+}
+
+
+.right-column {
+
+    grid-area: right;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+
+    min-width: 0;
+
+}
+
+
+.certifications-window {
+
+    grid-area: certifications;
+
+}
+
+
+.contact-window {
+
+    grid-area: contact;
+
+}
+
+
+/* ================= CONTEÚDO ================= */
+
+.panel-content {
+
+    padding: 12px;
+
+}
+
+
+h2 {
+
+    font-size: 17px;
+
+    line-height: 1.05;
+
+    letter-spacing: -0.5px;
+
+    margin-bottom: 12px;
+
+    font-weight: 700;
+
+}
+
+
+h2 em {
+
+    color: #e52b86;
+
+    font-style: italic;
+
+}
+
+
+h3 {
+
+    font-size: 12px;
+
+    margin-bottom: 5px;
+
+}
+
+
+p {
+
+    line-height: 1.45;
+
+}
+
+
+ul {
+
+    padding-left: 15px;
+
+}
+
+
+li {
+
+    margin-bottom: 4px;
+
+}
+
+
+/* ================= SOBRE MIM ================= */
+
+.intro-content {
+
+    display: grid;
+
+    grid-template-columns: 100px 1fr auto;
+
+    gap: 12px;
+
+    align-items: center;
+
+    padding: 12px;
+
+}
+
+
+.profile-photo-wrap {
+
+    width: 100px;
+
+    height: 100px;
+
+    border: 1px solid #101323;
+
+    overflow: hidden;
+
+    background: #f5f0e7;
+
+}
+
+
+.profile-photo {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+}
+
+
+.photo-placeholder {
+
+    display: none;
+
+    width: 100%;
+
+    height: 100%;
+
+    place-items: center;
+
+    font-size: 25px;
+
+    font-weight: 700;
+
+    color: #e52b86;
+
+}
+
+
+.identity h1 {
+
+    font-size: clamp(26px, 4vw, 52px);
+
+    line-height: .82;
+
+    letter-spacing: -2px;
+
+    color: #e52b86;
+
+    text-shadow: 1px 1px #101323;
+
+}
+
+
+.identity h1 em {
+
+    font-style: italic;
+
+}
+
+
+.role {
+
+    border-left: 1px solid #101323;
+
+    padding-left: 12px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4px;
+
+}
+
+
+.role span {
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+}
+
+
+.role strong {
+
+    font-size: 12px;
+
+}
+
+
+.role small {
+
+    font-size: 9px;
+
+}
+
+
+.bio {
+
+    padding: 0 12px 12px;
+
+    font-size: 11px;
+
+}
+
+
+/* ================= EXPERIÊNCIA ================= */
+
+.experience {
+
+    border-bottom: 1px solid #101323;
+
+    padding-bottom: 12px;
+
+    margin-bottom: 12px;
+
+}
+
+
+.experience:last-child {
+
+    border-bottom: none;
+
+    margin-bottom: 0;
+
+    padding-bottom: 0;
+
+}
+
+
+.date {
+
+    display: block;
+
+    color: #e52b86;
+
+    font-family: 'DM Mono', monospace;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    margin-bottom: 4px;
+
+}
+
+
+.experience p {
+
+    font-size: 10px;
+
+    margin-bottom: 6px;
+
+    color: #555;
+
+}
+
+
+/* ================= SOFTWARE ================= */
+
+.software-list {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+
+}
+
+
+.software-list > div {
+
+    display: grid;
+
+    grid-template-columns: 25px 1fr;
+
+    gap: 5px;
+
+    align-items: center;
+
+    font-size: 10px;
+
+}
+
+
+.software-icon {
+
+    width: 25px;
+
+    height: 25px;
+
+    border: 1px solid #101323;
+
+    display: grid;
+
+    place-items: center;
+
+    font-weight: 700;
+
+    font-family: 'DM Mono', monospace;
+
+}
+
+
+.meter {
+
+    grid-column: 2;
+
+    width: 100%;
+
+    height: 5px;
+
+    border: 1px solid #101323;
+
+    background: #fffaf0;
+
+}
+
+
+.meter i {
+
+    display: block;
+
+    height: 100%;
+
+    background: #e52b86;
+
+}
+
+
+/* ================= HABILIDADES ================= */
+
+.skills {
+
+    list-style: none;
+
+    padding: 0;
+
+}
+
+
+.skills li {
+
+    border-bottom: 1px dashed #e52b86;
+
+    padding: 5px 0;
+
+    font-size: 10px;
+
+}
+
+
+.skills li::before {
+
+    content: "+ ";
+
+    color: #e52b86;
+
+    font-weight: 700;
+
+}
+
+
+/* ================= FORMAÇÃO ================= */
+
+.education-window hr {
+
+    border: none;
+
+    border-top: 1px solid #101323;
+
+    margin: 12px 0;
+
+}
+
+
+.education-window p {
+
+    font-size: 10px;
+
+}
+
+
+/* ================= PROJETOS ================= */
+
+.projects-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 8px;
+
+}
+
+
+.project-card {
+
+    border: 1px solid #101323;
+
+    padding: 10px;
+
+    min-width: 0;
+
+    background: #fffaf0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+
+}
+
+
+.project-card h3 {
+
+    font-size: 11px;
+
+    color: #e52b86;
+
+}
+
+
+.project-card p {
+
+    font-size: 9px;
+
+    line-height: 1.4;
+
+}
+
+
+.project-card span {
+
+    align-self: flex-start;
+
+    border: 1px solid #101323;
+
+    padding: 3px 6px;
+
+    font-size: 8px;
+
+    color: #e52b86;
+
+    margin-top: auto;
+
+}
+
+
+/* ================= CERTIFICAÇÕES ================= */
+
+.certifications-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 12px;
+
+}
+
+
+.certifications-grid article {
+
+    border-right: 1px solid #e52b86;
+
+    padding-right: 10px;
+
+}
+
+
+.certifications-grid article:last-child {
+
+    border-right: none;
+
+}
+
+
+.certifications-grid h3 {
+
+    font-size: 11px;
+
+}
+
+
+.certifications-grid p {
+
+    font-size: 9px;
+
+}
+
+
+/* ================= CONTATO ================= */
+
+.contact-content {
+
+    padding: 12px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 25px;
+
+}
+
+
+.contact-content h2 {
+
+    margin: 0;
+
+}
+
+
+.contact-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 10px 25px;
+
+    flex: 1;
+
+}
+
+
+.contact-grid a {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    color: #101323;
+
+    text-decoration: none;
+
+    font-size: 10px;
+
+    min-width: 0;
+
+}
+
+
+.contact-symbol {
+
+    color: #e52b86;
+
+    font-size: 16px;
+
+}
+
+
+.contact-grid a:hover b {
+
+    color: #e52b86;
+
+}
+
+
+/* ================= FOOTER ================= */
+
+footer {
+
+    border-top: 1px solid #101323;
+
+    background: #e52b86;
+
+    text-align: center;
+
+    padding: 7px;
+
+    font-family: 'DM Mono', monospace;
+
+    font-size: 9px;
+
+}
+
+
+/* ================= RESPONSIVO ================= */
+
+@media (max-width: 700px) {
+
+    body {
+
+        padding: 5px;
+
+    }
+
+
+    .workspace {
+
+        grid-template-columns: 1fr;
+
+        grid-template-areas:
+
+            "intro"
+
+            "left"
+
+            "right"
+
+            "certifications"
+
+            "contact";
+
+    }
+
+
+    .intro-content {
+
+        grid-template-columns: 80px 1fr;
+
+    }
+
+
+    .profile-photo-wrap {
+
+        width: 80px;
+
+        height: 80px;
+
+    }
+
+
+    .role {
+
+        grid-column: 1 / -1;
+
+        border-left: none;
+
+        border-top: 1px solid #101323;
+
+        padding-left: 0;
+
+        padding-top: 10px;
+
+    }
+
+
+    .projects-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .certifications-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .certifications-grid article {
+
+        border-right: none;
+
+        border-bottom: 1px solid #e52b86;
+
+        padding-bottom: 10px;
+
+    }
+
+
+    .contact-content {
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 12px;
+
+    }
+
+
+    .contact-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
+footer a {
+    color: #c58bff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: opacity 0.3s ease;
+}
+
+footer a:hover {
+    opacity: 0.7;
+}
